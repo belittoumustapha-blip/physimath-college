@@ -1,0 +1,674 @@
+:root {
+    --primary: #3498db;
+    --secondary: #e74c3c;
+    --maths: #3498db;
+    --physics: #e74c3c;
+    --dark: #2c3e50;
+    --light: #ecf0f1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
+    color: var(--dark);
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Animations géométriques de fond */
+.background-shapes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.shape {
+    position: absolute;
+    opacity: 0.15;
+    transition: all 10s linear;
+}
+
+.math-shape {
+    background-color: var(--maths);
+}
+
+.physics-shape {
+    background-color: var(--physics);
+}
+
+.circle {
+    border-radius: 50%;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    background-color: transparent !important;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+}
+
+.math-shape.triangle {
+    border-bottom: 60px solid var(--maths);
+}
+
+.physics-shape.triangle {
+    border-bottom: 60px solid var(--physics);
+}
+
+/* Header amélioré avec formes géométriques VISIBLES */
+header {
+    background: linear-gradient(135deg, var(--dark), var(--primary));
+    color: white;
+    text-align: center;
+    padding: 3rem 1rem;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.header-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.header-shape {
+    position: absolute;
+    opacity: 0.3;
+    filter: drop-shadow(0 0 5px rgba(0,0,0,0.3));
+}
+
+.header-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--physics), transparent 70%);
+    top: -50px;
+    right: -30px;
+    animation: float 8s infinite ease-in-out;
+}
+
+.header-triangle {
+    width: 0;
+    height: 0;
+    border-left: 80px solid transparent;
+    border-right: 80px solid transparent;
+    border-bottom: 140px solid rgba(255,255,255,0.25);
+    bottom: -70px;
+    left: 10%;
+    transform: rotate(25deg);
+    animation: float 12s infinite ease-in-out reverse;
+}
+
+.header-square {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(45deg, var(--maths), transparent 80%);
+    transform: rotate(15deg);
+    top: 30%;
+    left: -20px;
+    animation: float 10s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+.logo {
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+}
+
+header p {
+    position: relative;
+    z-index: 1;
+    font-size: 1.3rem;
+    max-width: 600px;
+    margin: 0 auto;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+/* Navigation principale */
+.main-nav {
+    background-color: white;
+    padding: 1rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-tab {
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--dark);
+    border-radius: 30px;
+    margin: 0 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.nav-tab:hover {
+    background-color: rgba(52, 152, 219, 0.1);
+    color: var(--primary);
+}
+
+.nav-tab.active {
+    background-color: var(--primary);
+    color: white;
+}
+
+/* Contenu principal */
+.main-content {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    flex: 1;
+}
+
+/* Breadcrumb navigation */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.breadcrumb a {
+    color: var(--primary);
+    text-decoration: none;
+    margin: 0 0.3rem;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb-separator {
+    color: #95a5a6;
+}
+
+/* Section des niveaux */
+.levels-section {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.levels-section.active {
+    display: block;
+}
+
+.levels-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.level-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.level-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.level-header {
+    background: linear-gradient(135deg, var(--dark), var(--primary));
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.level-body {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+/* Section des matières */
+.subjects-section {
+    display: none;
+    text-align: center;
+    animation: fadeIn 0.5s ease;
+}
+
+.subjects-section.active {
+    display: block;
+}
+
+.subject-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.subject-card {
+    width: 200px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.subject-card:hover {
+    transform: scale(1.05);
+}
+
+.math-card .subject-header {
+    background: linear-gradient(135deg, var(--maths), #2980b9);
+}
+
+.physics-card .subject-header {
+    background: linear-gradient(135deg, var(--physics), #c0392b);
+}
+
+.subject-header {
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.subject-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subject-body {
+    padding: 1.5rem;
+    color: var(--dark);
+}
+
+/* Section des cours PDF */
+.courses-section {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.courses-section.active {
+    display: block;
+}
+
+.courses-list {
+    margin-top: 2rem;
+    display: grid;
+    gap: 1.5rem;
+}
+
+.course-item {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    display: flex;
+}
+
+.math-course {
+    border-left: 4px solid var(--maths);
+}
+
+.physics-course {
+    border-left: 4px solid var(--physics);
+}
+
+.course-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.course-thumbnail {
+    width: 150px;
+    flex-shrink: 0;
+    position: relative;
+    background: #f1f1f1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.course-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pdf-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #e74c3c;
+    font-size: 1.5rem;
+    text-shadow: 0 0 3px white;
+}
+
+.course-info {
+    padding: 1.5rem;
+    flex: 1;
+}
+
+.course-title {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--dark);
+    font-size: 1.2rem;
+}
+
+.course-description {
+    color: #7f8c8d;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.course-meta {
+    display: flex;
+    gap: 1rem;
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.course-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.download-btn, .preview-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+}
+
+.download-btn {
+    background-color: var(--primary);
+    color: white;
+}
+
+.preview-btn {
+    background-color: var(--secondary);
+    color: white;
+}
+
+.download-btn:hover, .preview-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+/* Modal pour la prévisualisation PDF */
+.pdf-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.pdf-modal-content {
+    width: 90%;
+    height: 90%;
+    background: white;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.pdf-modal-header {
+    padding: 1rem;
+    background: var(--dark);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px 8px 0 0;
+}
+
+.close-modal {
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close-modal:hover {
+    color: var(--secondary);
+}
+
+.pdf-modal-iframe {
+    flex: 1;
+    border: none;
+    border-radius: 0 0 8px 8px;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, var(--dark), var(--primary));
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+    margin-top: auto;
+    position: relative;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 2rem;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-section h3 {
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.footer-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--secondary);
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--secondary);
+    padding-left: 5px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--secondary);
+    transform: translateY(-3px);
+}
+
+.copyright {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.3; }
+    50% { transform: scale(1.1); opacity: 0.4; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .levels-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .nav-container {
+        flex-wrap: wrap;
+    }
+    
+    .nav-tab {
+        margin: 0.3rem;
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    header {
+        padding: 2rem 1rem;
+    }
+    
+    .logo {
+        font-size: 2rem;
+    }
+    
+    .course-item {
+        flex-direction: column;
+    }
+    
+    .course-thumbnail {
+        width: 100%;
+        height: 150px;
+    }
+    
+    .pdf-modal-content {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+}
+
+
+
+
+/* Styles existants à conserver */
+.level-card {
+  /* Vos styles existants */
+  position: relative;
+}
+
+/* Nouveaux styles à ajouter */
+.level-description {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  color: #555;
+  min-height: 60px;
+}
+
+.level-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: rgba(0,0,0,0.05);
+  padding: 0.3rem 0.6rem;
+  border-radius: 20px;
+}
+
+.meta-item i {
+  font-size: 0.8rem;
+  color: var(--primary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .level-description {
+    min-height: auto;
+  }
+  
+  .level-meta {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "PhysiMath Collège",
+  "url": "https://votresite.com",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://votresite.com/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<!--optimisation seo-->
+    <!-- Dans le <head> -->
+<meta name="description" content="Ressources pédagogiques gratuites en Mathématiques et Physique pour collégiens (1AC, 2AC, 3AC). Cours PDF, exercices et préparations aux examens.">
+<meta name="keywords" content="physimath, physimath collège, maths college, physique collège, cours 1AC, cours 2AC, cours 3AC, exercices maths Maroc, physique Maroc, préparation examen régional">
+<meta name="author" content="PhysiMath Collège">
+
+<!-- Balises Open Graph pour les réseaux sociaux -->
+<meta property="og:title" content="PhysiMath Collège - Ressources pédagogiques">
+<meta property="og:description" content="Ressources gratuites en Maths/Physique pour collégiens marocains">
+<meta property="og:image" content="https://votresite.com/img/logo-og.jpg">
+<meta property="og:url" content="https://votresite.com">
+<meta property="og:type" content="website">
+<!---->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhysiMath Collège - Ressources pédagogiques</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Fond animé avec formes géométriques -->
+    <div class="background-shapes" id="backgroundShapes"></div>
+    
+    <!-- En-tête -->
+    <header>
+        <div class="header-shapes">
+            <div class="header-shape header-circle"></div>
+            <div class="header-shape header-triangle"></div>
+            <div class="header-shape header-square"></div>
+            <div class="header-shape" style="
+                width: 60px;
+                height: 60px;
+                background: conic-gradient(from 45deg, var(--maths), var(--physics));
+                border-radius: 20px;
+                top: 20%;
+                right: 15%;
+                animation: float 7s infinite ease-in-out 1s;
+                transform: rotate(45deg);
+            "></div>
+            <div class="header-shape" style="
+                width: 120px;
+                height: 120px;
+                border: 15px solid rgba(255,255,255,0.2);
+                border-radius: 50%;
+                bottom: 20%;
+                right: 20%;
+                animation: pulse 4s infinite ease-in-out;
+            "></div>
+        </div>
+        <div class="logo">PhysiMath Collège</div>
+        <p>Ressources pédagogiques en Mathématiques et Physique</p>
+    </header>
+    
+    <!-- Navigation principale -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-tab active" data-tab="levels">Niveaux</div>
+            <div class="nav-tab" data-tab="subjects" style="display: none;">Matières</div>
+            <div class="nav-tab" data-tab="courses" style="display: none;">Cours</div>
+        </div>
+    </nav>
+    
+    <!-- Contenu principal -->
+    <main class="main-content">
+        <!-- Breadcrumb navigation -->
+        <div class="breadcrumb">
+            <a href="#" class="breadcrumb-home">Accueil</a>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-current">Sélectionnez un niveau</span>
+        </div>
+        
+        <!-- Section des niveaux -->
+        <section class="levels-section active" id="levelsSection">
+            <h2>Choisissez votre niveau :</h2>
+            <div class="levels-grid">
+                <!-- 1ère Année -->
+                <div class="level-card" data-level="1AC">
+                    <div class="level-header">1ère Année Collège (1AC)</div>
+                    <div class="level-body">
+                        <svg width="80" height="80" viewBox="0 0 100 100" style="margin: 0 auto 1rem;">
+                            <circle cx="50" cy="50" r="40" fill="none" stroke="#3498db" stroke-width="5"/>
+                            <text x="50" y="60" text-anchor="middle" font-size="40" fill="#3498db">1</text>
+                        </svg>
+                        <p>Niveau d'introduction aux concepts de base</p>
+                    </div>
+                </div>
+                
+                <!-- 2ème Année -->
+                <div class="level-card" data-level="2AC">
+                    <div class="level-header">2ème Année Collège (2AC)</div>
+                    <div class="level-body">
+                        <svg width="80" height="80" viewBox="0 0 100 100" style="margin: 0 auto 1rem;">
+                            <polygon points="50,10 90,90 10,90" fill="none" stroke="#e74c3c" stroke-width="5"/>
+                            <text x="50" y="65" text-anchor="middle" font-size="40" fill="#e74c3c">2</text>
+                        </svg>
+                        <p>Approfondissement des connaissances</p>
+                    </div>
+                </div>
+                
+                <!-- 3ème Année -->
+                <div class="level-card" data-level="3AC">
+                    <div class="level-header">3ème Année Collège (3AC)</div>
+                    <div class="level-body">
+                        <svg width="80" height="80" viewBox="0 0 100 100" style="margin: 0 auto 1rem;">
+                            <rect x="15" y="15" width="70" height="70" fill="none" stroke="#2ecc71" stroke-width="5" rx="10"/>
+                            <text x="50" y="65" text-anchor="middle" font-size="40" fill="#2ecc71">3</text>
+                        </svg>
+                        <p>Préparation à l'examen régional</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section des matières -->
+        <section class="subjects-section" id="subjectsSection">
+            <h2>Choisissez une matière pour le <span id="selectedLevelText"></span> :</h2>
+            <div class="subject-cards">
+                <!-- Mathématiques -->
+                <div class="subject-card math-card" data-subject="maths">
+                    <div class="subject-header">
+                        <div class="subject-icon">∑</div>
+                        Mathématiques
+                    </div>
+                    <div class="subject-body">
+                        Algèbre, Géométrie, Statistiques
+                    </div>
+                </div>
+                
+                <!-- Physique -->
+                <div class="subject-card physics-card" data-subject="physics">
+                    <div class="subject-header">
+                        <div class="subject-icon">Φ</div>
+                        Physique
+                    </div>
+                    <div class="subject-body">
+                        Mécanique, Optique, Électricité
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section des cours PDF -->
+        <section class="courses-section" id="coursesSection">
+            <h2>Cours de <span id="selectedSubjectText"></span> pour la <span id="selectedLevelText2"></span> :</h2>
+            <div class="courses-list">
+                <!-- Les cours PDF seront générés dynamiquement ici -->
+            </div>
+        </section>
+    </main>
+    
+    <!-- Pied de page -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>PhysiMath Collège</h3>
+                <p>Plateforme éducative dédiée à l'apprentissage des Mathématiques et Physique pour les collégiens marocains.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Liens rapides</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="#">Mathématiques</a></li>
+                    <li><a href="#">Physique</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Niveaux</h3>
+                <ul class="footer-links">
+                    <li><a href="#">1ère Année Collège</a></li>
+                    <li><a href="#">2ème Année Collège</a></li>
+                    <li><a href="#">3ème Année Collège</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <ul class="footer-links">
+                    <li><a href="mailto:contact@physimath.ma">contact@physimath.ma</a></li>
+                    <li><a href="tel:+212612345678">+212 6 12 34 56 78</a></li>
+                    <li>Casablanca, Maroc</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 PhysiMath Collège. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- Modal PDF -->
+    <div id="pdfModal" class="pdf-modal">
+        <div class="pdf-modal-content">
+            <div class="pdf-modal-header">
+                <h3 id="pdfModalTitle">Prévisualisation du PDF</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <iframe id="pdfViewer" class="pdf-modal-iframe" src="about:blank"></iframe>
+        </div>
+    </div>
+    <div class="levels-grid">
+  <!-- 1ère Année -->
+  <article class="level-card" data-level="1AC" itemscope itemtype="http://schema.org/Course">
+    <div class="level-header" itemprop="name">1ère Année Collège (1AC)</div>
+    <div class="level-body">
+      <div class="level-description" itemprop="description">Introduction aux concepts fondamentaux en mathématiques et physique</div>
+      <div class="level-meta">
+        <span class="meta-item"><i class="fas fa-user-graduate"></i> <span itemprop="typicalAgeRange">12-13 ans</span></span>
+        <span class="meta-item"><i class="fas fa-layer-group"></i> <span itemprop="educationalLevel">Niveau débutant</span></span>
+      </div>
+      <meta itemprop="timeRequired" content="P9M"/>
+    </div>
+  </article>
+
+  <!-- 2ème Année -->
+  <article class="level-card" data-level="2AC" itemscope itemtype="http://schema.org/Course">
+    <div class="level-header" itemprop="name">2ème Année Collège (2AC)</div>
+    <div class="level-body">
+      <div class="level-description" itemprop="description">Approfondissement des concepts avec applications pratiques</div>
+      <div class="level-meta">
+        <span class="meta-item"><i class="fas fa-user-graduate"></i> <span itemprop="typicalAgeRange">13-14 ans</span></span>
+        <span class="meta-item"><i class="fas fa-layer-group"></i> <span itemprop="educationalLevel">Niveau intermédiaire</span></span>
+      </div>
+    </div>
+  </article>
+
+  <!-- 3ème Année -->
+  <article class="level-card" data-level="3AC" itemscope itemtype="http://schema.org/Course">
+    <div class="level-header" itemprop="name">3ème Année Collège (3AC)</div>
+    <div class="level-body">
+      <div class="level-description" itemprop="description">Préparation intensive à l'examen régional avec sujets types</div>
+      <div class="level-meta">
+        <span class="meta-item"><i class="fas fa-user-graduate"></i> <span itemprop="typicalAgeRange">14-15 ans</span></span>
+        <span class="meta-item"><i class="fas fa-layer-group"></i> <span itemprop="educationalLevel">Niveau avancé</span></span>
+        <span class="meta-item"><i class="fas fa-clock"></i> 6 mois</span>
+      </div>
+      <meta itemprop="timeRequired" content="P6M"/>
+    </div>
+  </article>
+</div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
